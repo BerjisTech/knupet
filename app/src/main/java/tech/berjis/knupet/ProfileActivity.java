@@ -22,7 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     String UID;
 
-    ImageView menu;
+    ImageView home, chats, profile, back, menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,21 @@ public class ProfileActivity extends AppCompatActivity {
         newUserState();
 
         menu = findViewById(R.id.menu);
+        home = findViewById(R.id.home);
+        chats = findViewById(R.id.chats);
+        profile = findViewById(R.id.profile);
+        back = findViewById(R.id.back);
+
+        staticOnclicks();
+    }
+
+    private void staticOnclicks() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfileActivity.super.finish();
+            }
+        });
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +58,23 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, SettingsActivity.class));
             }
         });
-
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, FeedActivity.class));
+            }
+        });
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, DMsActivity.class));
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 
     private void newUserState(){
