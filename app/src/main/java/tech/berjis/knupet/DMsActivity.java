@@ -1,16 +1,14 @@
 package tech.berjis.knupet;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EditProfileActivity extends AppCompatActivity {
+import android.os.Bundle;
+
+public class DMsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
-
+        setContentView(R.layout.activity_d_ms);
     }
-
 }

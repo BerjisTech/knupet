@@ -27,7 +27,9 @@ public class FeedActivity extends AppCompatActivity {
         profile = findViewById(R.id.profile);
         camera = findViewById(R.id.camera);
         likes = findViewById(R.id.likes);
-        
+
+
+        unloggedState();
     }
 
     private void unloggedState(){
@@ -71,7 +73,7 @@ public class FeedActivity extends AppCompatActivity {
             chats.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(FeedActivity.this, RegisterActivity.class));
+                    startActivity(new Intent(FeedActivity.this, DMsActivity.class));
                 }
             });
             profile.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +91,7 @@ public class FeedActivity extends AppCompatActivity {
             likes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(FeedActivity.this, RegisterActivity.class));
+                    startActivity(new Intent(FeedActivity.this, NotificationsActivity.class));
                 }
             });
         }
