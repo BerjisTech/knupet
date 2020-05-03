@@ -1,0 +1,2 @@
+rootProject.name='Knupet'
+include ':app'

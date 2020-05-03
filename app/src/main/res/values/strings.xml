@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Knupet</string>
+    <string name="feeds">Feeds</string>
+    <string name="my_profile">My Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">username</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_phone_number">Change Phone Number</string>
+    <string name="notifications">Notifications</string>
+    <string name="get_help">Get Help</string>
+    <string name="report_problem">Report Problem</string>
+    <string name="terms_of_use">Terms Of Use</string>
+    <string name="logout">Logout</string>
+    <string name="save_changes">Save changes</string>
+    <string name="write_a_comment">Write a comment</string>
+    <string name="next">Next</string>
+</resources>

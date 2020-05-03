@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "935076266009",
+    "firebase_url": "https://knupet-3adb4.firebaseio.com",
+    "project_id": "knupet-3adb4",
+    "storage_bucket": "knupet-3adb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935076266009:android:3afedec641320010ae2a88",
+        "android_client_info": {
+          "package_name": "tech.berjis.knupet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935076266009-6kr680se3se06e17e4jkrnh3n7a2tl49.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.berjis.knupet",
+            "certificate_hash": "1aa105ecab722b7140a3fc414fb50c8516848bb9"
+          }
+        },
+        {
+          "client_id": "935076266009-0lle222ec949hnd9r3gberf1gh72tv06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw4Crah6Ak9xsPUbM2rfHLmvozByG6w4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935076266009-0lle222ec949hnd9r3gberf1gh72tv06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
