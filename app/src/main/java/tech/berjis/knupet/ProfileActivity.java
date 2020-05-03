@@ -74,8 +74,10 @@ public class ProfileActivity extends AppCompatActivity {
         dbRef.child("Users").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!dataSnapshot.child("name").exists()){
-                    startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
+                if (!dataSnapshot.child("first_name").exists() ||
+                        !dataSnapshot.child("last_name").exists() ||
+                        !dataSnapshot.child("user_name").exists()){
+                    startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
                 }
             }
 

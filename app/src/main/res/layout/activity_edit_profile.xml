@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/back"
@@ -65,29 +65,29 @@
                 app:layout_constraintTop_toTopOf="@+id/dp" />
 
             <TextView
-                android:id="@+id/emailHint"
+                android:id="@+id/userNameHint"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
                 android:alpha="0.6"
-                android:text="Your email"
+                android:text="@string/your_user_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/userName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="example@email.com"
-                android:inputType="textEmailAddress"
+                android:hint=""
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/emailHint" />
+                app:layout_constraintTop_toBottomOf="@id/userNameHint" />
 
             <TextView
                 android:id="@+id/firstNameHint"
@@ -100,7 +100,7 @@
                 android:text="@string/first_name"
                 app:layout_constraintEnd_toStartOf="@+id/half"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/email" />
+                app:layout_constraintTop_toBottomOf="@id/userName" />
 
             <EditText
                 android:id="@+id/firstName"
@@ -124,7 +124,7 @@
                 android:text="@string/last_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/half"
-                app:layout_constraintTop_toBottomOf="@id/email" />
+                app:layout_constraintTop_toBottomOf="@id/userName" />
 
             <EditText
                 android:id="@+id/lastName"
@@ -138,68 +138,29 @@
                 app:layout_constraintTop_toBottomOf="@id/firstNameHint" />
 
             <TextView
-                android:id="@+id/userNameHint"
+                android:id="@+id/userEmailHint"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
                 android:alpha="0.6"
-                android:text="@string/username"
+                android:text="@string/email_address"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lastName" />
 
             <EditText
-                android:id="@+id/userName"
+                android:id="@+id/userEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:hint=""
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/userNameHint" />
-
-            <TextView
-                android:id="@+id/phoneHint"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="20dp"
-                android:alpha="0.6"
-                android:text="@string/phone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/userName" />
-
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/country_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:paddingTop="3dp"
-                app:ccpDialog_showCloseIcon="true"
-                app:ccp_autoDetectCountry="true"
-                app:ccp_defaultNameCode="KE"
-                app:ccp_hintExampleNumber="true"
-                app:ccp_showArrow="false"
-                app:ccp_clickable="false"
-                app:ccp_showNameCode="false"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/phoneHint" />
-
-            <EditText
-                android:id="@+id/phone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:inputType="phone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/country_code"
-                app:layout_constraintTop_toBottomOf="@id/phoneHint" />
+                app:layout_constraintTop_toBottomOf="@id/userEmailHint" />
 
             <TextView
                 android:id="@+id/updateProfile"
@@ -218,7 +179,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phone" />
+                app:layout_constraintTop_toBottomOf="@+id/userEmail" />
 
             <View
                 android:id="@+id/half"
