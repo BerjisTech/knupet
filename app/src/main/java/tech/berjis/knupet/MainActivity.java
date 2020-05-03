@@ -25,12 +25,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager screenPager;
-    IntroViewPagerAdapter introViewPagerAdapter ;
+    IntroViewPagerAdapter introViewPagerAdapter;
     TabLayout tabIndicator;
     Button btnNext;
-    int position = 0 ;
+    int position = 0;
     Button btnGetStarted;
-    Animation btnAnim ;
+    Animation btnAnim;
     TextView tvSkip;
     ConstraintLayout rootView;
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (restorePrefData()) {
 
-            Intent mainActivity = new Intent(getApplicationContext(), CommentsActivity.class );
+            Intent mainActivity = new Intent(getApplicationContext(), FeedActivity.class);
             startActivity(mainActivity);
             finish();
         }
@@ -72,20 +72,20 @@ public class MainActivity extends AppCompatActivity {
         btnNext = findViewById(R.id.btn_next);
         btnGetStarted = findViewById(R.id.btn_get_started);
         tabIndicator = findViewById(R.id.tab_indicator);
-        btnAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animation);
+        btnAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
         tvSkip = findViewById(R.id.tv_skip);
         rootView = findViewById(R.id.rootView);
 
         // fill list screen
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("The simplest way to share moments", "",R.drawable.img_one));
-        mList.add(new ScreenItem("Share your moments with friends","Checkout what your friends family and interests have been capturing.",R.drawable.img_two));
-        mList.add(new ScreenItem("Meet new friends faster","Swipe to meet new friends, join groups and live your best life",R.drawable.img_three));
+        mList.add(new ScreenItem("The simplest way to share moments", "", R.drawable.img_one));
+        mList.add(new ScreenItem("Share your moments with friends", "Checkout what your friends family and interests have been capturing.", R.drawable.img_two));
+        mList.add(new ScreenItem("Meet new friends faster", "Swipe to meet new friends, join groups and live your best life", R.drawable.img_three));
 
         // setup viewpager
-        screenPager =findViewById(R.id.screen_viewpager);
-        introViewPagerAdapter = new IntroViewPagerAdapter(this,mList);
+        screenPager = findViewById(R.id.screen_viewpager);
+        introViewPagerAdapter = new IntroViewPagerAdapter(this, mList);
         screenPager.setAdapter(introViewPagerAdapter);
 
         // setup tablayout with viewpager
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (position == mList.size()-1) { // when we reach to the last screen
+                if (position == mList.size() - 1) { // when we reach to the last screen
 
                     // TODO : show the GETSTARTED Button and hide the indicator and the next button
 
@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
-
 
 
             }
@@ -128,13 +127,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                if (tab.getPosition() == mList.size()-1) {
+                if (tab.getPosition() == mList.size() - 1) {
 
                     loaddLastScreen();
 
                 }
-
-
             }
 
             @Override
@@ -149,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         // Get Started button click listener
 
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
@@ -159,14 +155,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //open main activity
 
-                Intent mainActivity = new Intent(getApplicationContext(),FeedActivity.class);
+                Intent mainActivity = new Intent(getApplicationContext(), FeedActivity.class);
                 startActivity(mainActivity);
                 // also we need to save a boolean value to storage so next time when the user run the app
                 // we could know that he is already checked the intro screen activity
                 // i'm going to use shared preferences to that process
                 savePrefsData();
                 finish();
-
 
 
             }
@@ -182,25 +177,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     private boolean restorePrefData() {
 
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
-        Boolean isIntroActivityOpnendBefore = pref.getBoolean("isIntroOpnend",false);
-        return  isIntroActivityOpnendBefore;
-
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs", MODE_PRIVATE);
+        Boolean isIntroActivityOpnendBefore = pref.getBoolean("isIntroOpnend", false);
+        return isIntroActivityOpnendBefore;
 
 
     }
 
     private void savePrefsData() {
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putBoolean("isIntroOpnend",true);
+        editor.putBoolean("isIntroOpnend", true);
         editor.commit();
 
 
@@ -216,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
         // TODO : ADD an animation the getstarted button
         // setup animation
         btnGetStarted.setAnimation(btnAnim);
-
 
 
     }

@@ -25,6 +25,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppCustomTheme.NoActionBar">
 
+        <activity android:name=".CreatePost"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".AppInfo"
             android:screenOrientation="portrait"
