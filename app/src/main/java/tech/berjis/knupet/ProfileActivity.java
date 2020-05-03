@@ -39,18 +39,11 @@ public class ProfileActivity extends AppCompatActivity {
         home = findViewById(R.id.home);
         chats = findViewById(R.id.chats);
         profile = findViewById(R.id.profile);
-        back = findViewById(R.id.back);
 
         staticOnclicks();
     }
 
     private void staticOnclicks() {
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ProfileActivity.super.finish();
-            }
-        });
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
