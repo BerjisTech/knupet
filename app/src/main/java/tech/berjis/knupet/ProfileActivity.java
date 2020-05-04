@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.vanniktech.emoji.EmojiTextView;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -22,7 +25,9 @@ public class ProfileActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     String UID;
 
-    ImageView home, chats, profile, back, menu;
+    ImageView home, chats, profile, menu;
+    CircleImageView dp;
+    EmojiTextView full_name, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +38,15 @@ public class ProfileActivity extends AppCompatActivity {
         dbRef = FirebaseDatabase.getInstance().getReference();
         UID = mAuth.getCurrentUser().getUid();
         dbRef.keepSynced(true);
-        newUserState();
 
         menu = findViewById(R.id.menu);
         home = findViewById(R.id.home);
         chats = findViewById(R.id.chats);
         profile = findViewById(R.id.profile);
+        username = findViewById(R.id.username);
+        full_name = findViewById(R.id.full_name);
 
+        loaduserdata();
         staticOnclicks();
     }
 
@@ -66,6 +73,24 @@ public class ProfileActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            }
+        });
+    }
+
+    private void loaduserdata(){
+        newUserState();
+        dbRef.child("Users").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String alias = dataSnapshot.child("user_name").getValue().toString();
+                String fullname = dataSnapshot.child("first_name").getValue().toString() + " " + dataSnapshot.child("last_name").getValue().toString();;
+                username.setText("@" + alias);
+                full_name.setText(fullname);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
